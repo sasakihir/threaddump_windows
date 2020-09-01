@@ -9,10 +9,6 @@ threaddump
 |   README.txt
 |   threaddump.bat
 |
-+---lib
-|   \---PSTools
-|           PsExec64.exe, etc
-|
 \---log
 ```
 
