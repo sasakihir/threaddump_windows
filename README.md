@@ -44,11 +44,12 @@ REM set pstools_dir=<PSToolsのインストールディレクトリ> ex. C:\app:
 # 動作確認1. 手動
 
 - threaddump.batを管理者実行する
-- log配下にファイルが2つ出力されることを確認する
-- ファイルの説明は以下
+- log配下にファイルが2つ出力されたことを確認する
+- ファイルの説明
 	- threaddump.yyyymmddhhmmss.log: スレッドダンプ
-	- threaddump.yyyymmddhhmmss.err.log: スレッドダンプ取得時に発生したエラー-
-- threaddump.yyyymmddhhmmss.logを開いてスタックトレースが出力されていればOK (通常、ファイルサイズは20KB以上となる)
+	- threaddump.yyyymmddhhmmss.err.log: スレッドダンプ取得時に発生したエラー
+- threaddump.yyyymmddhhmmss.logを開いてスタックトレースが出力されていればOK
+	- 通常、ファイルサイズは20KB以上となるため、それ以下では取得できていない可能性が高い
 - スタックトレースが出力されていない場合は、threaddump.yyyymmddhhmmss.err.logを開いてエラーを確認する
 
 # 動作確認2. タスクスケジューラから手動実行
@@ -86,7 +87,7 @@ OKをクリックして、タスク実行用に指定したユーザのパスワ
 ```
 
 - タスクを手動実行する
-- スレッドダンプが正常に出力されたことを確認する
+- スレッドダンプが出力されたことを確認する
 
 # 本実行 (タスクスケジューラからスケジュール実行)
 
