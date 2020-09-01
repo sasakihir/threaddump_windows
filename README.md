@@ -99,6 +99,8 @@ OKをクリックして、タスク実行用に指定したユーザのパスワ
 # PSToolsの利用
 
 - Windowsのセキュリティに起因してプロセスにアタッチできない場合は、SysinternalsのPSToolsを利用する (オプション)
+- PSToolsをDLし、zipを解凍して適当なフォルダに配置する
+	- https://docs.microsoft.com/en-us/sysinternals/downloads/pstools
 - threaddump.batの`set pstools_dir`を設定して、コメントアウトを外す
 - `REM psexec -accepteula ..`のコメントアウトを外す
 - 手動実行, タスクスケジューラでの手動実行で動作確認を行う
