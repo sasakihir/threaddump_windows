@@ -10,8 +10,8 @@ threaddump_windows
 |   threaddump.bat  
 |  
 \---log  
-        threaddump_20200901223005.log  
-        threaddump_20200901223005.err.log
+        threaddump_yyyymmddhhmmss.log  
+        threaddump_yyyymmddhhmmss.err.log
 ```
 
 logフォルダ以下は、バッチ実行時に生成される
