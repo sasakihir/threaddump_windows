@@ -11,8 +11,7 @@ threaddump
 |
 +---lib
 |   \---PSTools
-|           PsExec64.exe
-|						その他exe
+|           PsExec64.exe, etc
 |
 \---log
 ```
@@ -23,6 +22,11 @@ threaddump
 - スレッドダンプの取得にはJDKに含まれるjstack.exeを利用する。
 - プロセスIDは静的に設定が必要。
 - Windowsのセキュリティに起因してプロセスにアタッチできない場合は、SysinternalsのPSToolsを利用する (オプション)。
+
+# 前提
+
+- JDKをインストール済み
+- (オプション/psexecを利用する場合) PSToolsをインストール済み
 
 # 準備
 
@@ -36,8 +40,7 @@ set times=<スレッドダンプの取得回数>
 set pid=<JavaのプロセスID>
 ```
 
-- 以下についてはオプショナル。jstackだけでスレッドダンプが取れないときに、psexecを利用するときに設定する
-
+- (オプション/psexecを利用する場合) 
 ```
 REM set pstools_dir=<PSToolsのインストールディレクトリ> ex. C:\app:\PSTools
 ```
@@ -45,11 +48,12 @@ REM set pstools_dir=<PSToolsのインストールディレクトリ> ex. C:\app:
 # 動作確認1. 手動
 
 - threaddump.batを管理者実行する
-- スレッドダンプが正常に出力されたことを確認する
-	- log配下にthreaddump.yyyymmddhhmmss.logとthreaddump.yyyymmddhhmmss.err.logが出力される
-	- threaddump.yyyymmddhhmmss.logがスレッドダンプを、threaddump.yyyymmddhhmmss.err.logがスレッドダンプ取得時に発生したエラーを記録している
-	- threaddump.yyyymmddhhmmss.logを開いてスレッド情報が出力されていればOK (通常、ファイルサイズは20KB以上となる)
-	- スレッドダンプが出力されていない場合は、threaddump.yyyymmddhhmmss.err.logを開いて内容を確認する
+- log配下にファイルが2つ出力されることを確認する
+- ファイルの説明は以下
+	- threaddump.yyyymmddhhmmss.log: スレッドダンプ
+	- threaddump.yyyymmddhhmmss.err.log: スレッドダンプ取得時に発生したエラー-
+- threaddump.yyyymmddhhmmss.logを開いてスタックトレースが出力されていればOK (通常、ファイルサイズは20KB以上となる)
+- スタックトレースが出力されていない場合は、threaddump.yyyymmddhhmmss.err.logを開いてエラーを確認する
 
 # 動作確認2. タスクスケジューラから手動実行
 
@@ -85,9 +89,16 @@ threaddump.batを指定
 OKをクリックして、タスク実行用に指定したユーザのパスワードを入力して閉じる  
 ```
 
-- タスクを実行する
+- タスクを手動実行する
 - スレッドダンプが正常に出力されたことを確認する
 
 # 本実行 (タスクスケジューラからスケジュール実行)
 
 - タスクスケジューラで指定した日時を過ぎたあと、スレッドダンプが正常に出力されたことを確認する
+
+# PSToolsの利用
+
+- Windowsのセキュリティに起因してプロセスにアタッチできない場合は、SysinternalsのPSToolsを利用する (オプション)
+- threaddump.batの`set pstools_dir`を設定して、コメントアウトを外す
+- `REM psexec -accepteula ..`のコメントアウトを外す
+- 手動実行, タスクスケジューラでの手動実行で動作確認を行う
