@@ -22,7 +22,7 @@ threaddump
 # 前提
 
 - JDKをインストール済み
-- (オプション/psexecを利用する場合) PSToolsをインストール済み
+- PSToolsをインストール済み (オプション)
 
 # 準備
 
@@ -36,7 +36,7 @@ set times=<スレッドダンプの取得回数>
 set pid=<JavaのプロセスID>
 ```
 
-- (オプション/psexecを利用する場合) 
+- PSToolsを利用する場合 (オプション)
 ```
 REM set pstools_dir=<PSToolsのインストールディレクトリ> ex. C:\app:\PSTools
 ```
@@ -92,9 +92,8 @@ OKをクリックして、タスク実行用に指定したユーザのパスワ
 
 - タスクスケジューラで指定した日時を過ぎたあと、スレッドダンプが正常に出力されたことを確認する
 
-# PSToolsの利用
+# PSToolsの利用 (オプション)
 
-- Windowsのセキュリティに起因してプロセスにアタッチできない場合は、SysinternalsのPSToolsを利用する (オプション)
 - PSToolsをDLし、zipを解凍して適当なフォルダに配置する
 	- https://docs.microsoft.com/en-us/sysinternals/downloads/pstools
 - threaddump.batの`set pstools_dir`を設定して、コメントアウトを外す
