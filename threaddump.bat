@@ -15,8 +15,6 @@ REM processing
 REM ####################
 
 set log_dir=%~dp0\log
-set time_tmp=%time: =0%
-set now=%date:/=%%time_tmp:~0,2%%time_tmp:~3,2%%time_tmp:~6,2%
 set path=%jdk_home%\bin;%pstools_dir%;%path%
 
 for /l %%n in (1,1,%times%) do (
