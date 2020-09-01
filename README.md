@@ -5,12 +5,16 @@ WindowsでJavaのスレッドダンプを取得する
 # フォルダ構成
 
 ```
-threaddump
-|   README.txt
-|   threaddump.bat
-|
-\---log
+threaddump_windows  
+|   README.md  
+|   threaddump.bat  
+|  
+\---log  
+        threaddump_20200901223005.log  
+        threaddump_20200901223005.err.log
 ```
+
+logフォルダ以下は、バッチ実行時に生成される
 
 # 仕様
 
@@ -26,7 +30,7 @@ threaddump
 
 # 準備
 
-- 上記フォルダ一式を適当なフォルダに配置する
+- threaddump.batを適当なフォルダに配置する
 - threaddump.batをエディタで開き、以下をセットする
 
 ```
