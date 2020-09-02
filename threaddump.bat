@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 
 REM ####################
 REM setting
@@ -15,7 +16,7 @@ REM processing
 REM ####################
 
 set log_dir=%~dp0\log
-mkdir %log_dir% 2>null
+mkdir %log_dir% 2>nul
 set path=%jdk_home%\bin;%pstools_dir%;%path%
 
 for /l %%n in (1,1,%times%) do (
