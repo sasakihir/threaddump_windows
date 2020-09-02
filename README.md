@@ -54,7 +54,7 @@ REM set pstools_dir=<PSToolsのインストールディレクトリ> ex. C:\app:
 	- threaddump.yyyymmddhhmmss.log: スレッドダンプ
 	- threaddump.yyyymmddhhmmss.err.log: スレッドダンプ取得時に発生したエラー
 - threaddump.yyyymmddhhmmss.logを開いてスタックトレースが出力されていればOK
-	- 通常、ファイルサイズは20KB以上となるため、それ以下では取得できていない可能性が高い
+	- ファイルサイズが2KB以下の場合は取得できていない可能性が高い
 - スタックトレースが出力されていない場合は、threaddump.yyyymmddhhmmss.err.logを開いてエラーを確認する
 
 # 実行の仕方-2. スケジュール実行
