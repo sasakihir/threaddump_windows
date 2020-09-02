@@ -104,6 +104,7 @@ OKをクリックして、タスク実行用に指定したユーザのパスワ
 - PSToolsをDLし、zipを解凍して適当なフォルダに配置する
 	- https://docs.microsoft.com/en-us/sysinternals/downloads/pstools
 - threaddump.batの`set pstools_dir`を設定して、コメントアウトを外す
+- `jstack.exe !pid! ..`の行をコメントアウトする
 - `REM psexec -accepteula ..`のコメントアウトを外す
 - 手動実行, タスクスケジューラでの手動実行で動作確認を行う
 
