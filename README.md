@@ -108,6 +108,10 @@ OKをクリックして、タスク実行用に指定したユーザのパスワ
 - `REM psexec -accepteula ..`のコメントアウトを外す
 - 手動実行, タスクスケジューラでの手動実行で動作確認を行う
 
+# 動作確認済み環境
+- Windows Server 2012 R2 (64bit) + Oracle JDK 8u221 (64bit)
+- Windows Server 2012 R2 (64bit) + Oracle JDK 7u71 (32bit)
+
 # トラブルシューティング
 
 - threaddump_yyyymmddhhmmss.logが出力されない
